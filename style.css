@@ -1,0 +1,92 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    background-color: #eef9bf;
+}
+
+.titulo {
+    font-size: 26px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #75B79E;
+}
+
+.container-jogo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: inherit;
+}
+
+.container-cartas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.carta {
+    width: 117px;
+    height: 146px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.lado {
+    width: 100%;
+    height: 100%;
+    background-color: #A7E9AF;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+}
+
+.lado-verso {
+    transform: rotateY(180deg);
+}
+
+.selecionada .lado-verso {
+    transform: rotateY(0deg);
+}
+
+.selecionada .lado-frente {
+    transform: rotateY(-180deg);
+}
+
+.fixada .lado-verso {
+    transform: rotateY(0deg);
+}
+
+.fixada .lado-frente {
+    transform: rotateY(0deg);
+}
+
+@media (max-width: 335px) {
+    .container-jogo {
+        height: 629px;
+        overflow: scroll;
+    }
+
+    .container-cartas {
+        flex-direction: column;
+    }
+}
